@@ -6,7 +6,11 @@ require('dotenv').config();
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.FRONTEND_URL
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post('/send-email', async (req, res) => {
