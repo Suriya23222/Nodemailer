@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/send-email', formData);
+      await axios.post(`${process.env.REACT_APP_API}/send-email`, formData);
       setSnackbar({
          open: true, 
          severity: 'success', 
