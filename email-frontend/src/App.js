@@ -32,7 +32,11 @@ function App() {
 
     try {
       await axios.post('http://localhost:5000/send-email', formData);
-      setSnackbar({ open: true, severity: 'success', message: 'Email sent successfully!' });
+      setSnackbar({
+         open: true, 
+         severity: 'success', 
+         message: 'Email sent successfully!' 
+        });
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
       setSnackbar({ open: true, severity: 'error', message: 'Failed to send email.' });
@@ -41,7 +45,12 @@ function App() {
 
   return (
     <Container maxWidth="sm" sx={{ mt: 5 }}>
-      <Typography variant="h4" gutterBottom>Contact Us</Typography>
+      <Typography 
+         variant="h4" 
+         gutterBottom
+        >
+          Bird
+      </Typography>
       <Box component="form" onSubmit={handleSubmit}>
         <TextField
           fullWidth
@@ -78,10 +87,17 @@ function App() {
         </Button>
       </Box>
 
-      <Snackbar open={snackbar.open} autoHideDuration={4000} onClose={handleClose}>
-        <Alert severity={snackbar.severity} onClose={handleClose}>
+      <Snackbar
+        open={snackbar.open} 
+        autoHideDuration={4000} 
+        onClose={handleClose}
+        >
+      <Alert 
+        severity={snackbar.severity} 
+        onClose={handleClose}
+        >
           {snackbar.message}
-        </Alert>
+      </Alert>
       </Snackbar>
     </Container>
   );

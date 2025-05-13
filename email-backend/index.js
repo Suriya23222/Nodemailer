@@ -23,7 +23,7 @@ app.post('/send-email', async (req, res) => {
 
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // or replace with email if sending to user
+      to: process.env.GMAIL_USER, 
       subject: `New Message from ${name}`,
       text: `From: ${email}\n\n${message}`
     };
