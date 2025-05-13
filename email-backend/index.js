@@ -7,7 +7,7 @@ const app = express();
 const PORT = 5000;
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL
+  origin: process.env.NODE_ENV === 'development' ? 'https://localhost:3000' : 'https://nodemailer-v2a7.vercel.app'
 };
 
 app.use(cors(corsOptions));
